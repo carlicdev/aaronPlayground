@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 const LoginForm = () => {
     const [username, setUsername] = useState('');
@@ -22,7 +23,11 @@ const LoginForm = () => {
             />
             <div className='text-xs font-thin text-gray-300 text-right  mb-2'>Olvide mi contraseña</div>  
             <button className='w-full py-2 bg-green-600 text-white rounded shadow mb-5 hover:bg-green-700'>Login</button>
-            <button className='mx-auto py-2 bg-yellow-600 text-white rounded shadow px-3 hover:bg-yellow-700'>Crear Cuenta</button>
+            <button className='mx-auto py-2 bg-yellow-600 text-white rounded shadow px-3 hover:bg-yellow-700'>
+                <Link to='/signup'>
+                    Crear Cuenta Nueva
+                </Link>
+            </button>
         </div>
     )
 }
