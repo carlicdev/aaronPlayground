@@ -30,11 +30,12 @@ exports._login = async (req, res) => {
         }
 
         // Sign token
-        const token = jwt.sign(payload, jwtSecret)
+        const token = jwt.sign(payload, jwtSecret);
 
         // Send token
         res.status(200).json({
             msg: 'Authenticated',
+            username: user.username,
             token: token
         })
     } catch(err) {
